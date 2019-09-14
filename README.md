@@ -1,7 +1,8 @@
-# [Docker Compose with Spring Boot, MongoDB, NGINX](https://hellokoding.com/docker-compose-with-spring-boot-mongodb-nginx/)
+#Docker Compose with Spring Boot, Hibernate OGM, MongoDB
 
 ## What you'll build
-- A simple Spring Boot application  with MongoDB and NGINX running inside Docker containers 
+- A simple Spring Boot application with MongoDB running inside Docker containers.
+- Simple RESTful service for working with shop items.
 
 ## What you'll need
 - Docker CE
@@ -11,9 +12,14 @@
 - Java
 - Spring Boot
 - MongoDB
-- NGINX
+- Hibernate OGM
 - Maven
 
 ## Run
+- Clone repo `git clone https://github.com/DimaRyazanov/shopitem`
 - Run command `docker-compose up`
-- Access to http://localhost/
+
+## Commands
+- Create new items.
+``
+
