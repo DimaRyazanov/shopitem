@@ -1,4 +1,4 @@
-#Docker Compose with Spring Boot, Hibernate OGM, MongoDB
+# Docker Compose with Spring Boot, Hibernate OGM, MongoDB
 
 ## What you'll build
 - A simple Spring Boot application with MongoDB running inside Docker containers.
