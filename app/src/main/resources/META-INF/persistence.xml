@@ -10,8 +10,6 @@
             <property name="hibernate.ogm.datastore.provider" value="MONGODB" />
             <property name="hibernate.ogm.datastore.database" value="ShopDB" />
             <property name="hibernate.ogm.datastore.create_database" value="true" />
-            <property name="hibernate.ogm.datastore.host" value="127.0.0.1" />
-            <property name="hibernate.ogm.mongodb.port" value="27017" />
         </properties>
     </persistence-unit>
     <persistence-unit name="test-ogm" transaction-type="JTA">

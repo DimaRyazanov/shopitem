@@ -29,6 +29,11 @@
         </dependency>
         <!-- OGM for mongoDB -->
         <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.11.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.hibernate.ogm</groupId>
             <artifactId>hibernate-ogm-mongodb</artifactId>
             <version>5.4.0.Final</version>
