@@ -29,8 +29,9 @@ public class ShopItemRepositoryImpl implements ShopItemRepository{
 
     @Override
     public ShopItem save(ShopItem item) {
+        EntityManager entityManager = managerFactory.createEntityManager();
         try {
-            EntityManager entityManager = managerFactory.createEntityManager();
+
             entityManager.getTransaction().begin();
 
             if (item.isNew()) {
@@ -43,6 +44,8 @@ public class ShopItemRepositoryImpl implements ShopItemRepository{
             entityManager.close();
             return item;
         } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+            entityManager.close();
             throw new TransactionException("Cann't save entity, transaction exception");
         }
     }
@@ -75,5 +78,27 @@ public class ShopItemRepositoryImpl implements ShopItemRepository{
                 .getResultList();
         entityManager.close();
         return result;
+    }
+
+    @Override
+    public boolean delete(String id) {
+        EntityManager entityManager = managerFactory.createEntityManager();
+        try {
+            entityManager.getTransaction().begin();
+            ShopItem shopItem = entityManager.find(ShopItem.class, id);
+            boolean result = false;
+            if (shopItem != null) {
+                entityManager.remove(shopItem);
+                result = true;
+            }
+            entityManager.getTransaction().commit();
+            entityManager.close();
+
+            return result;
+        } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+            entityManager.close();
+            throw new TransactionException("Cann't delete entity, transaction exception");
+        }
     }
 }

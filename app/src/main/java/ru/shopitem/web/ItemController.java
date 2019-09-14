@@ -40,7 +40,13 @@ public class ItemController {
         service.update(item);
     }
 
-    @GetMapping(value = "{id}")
+    @DeleteMapping(value = "/{id}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable String id) {
+        service.delete(id);
+    }
+
+    @GetMapping(value = "/{id}")
     public ShopItem get(@PathVariable String id){
         return service.get(id);
     }

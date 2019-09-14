@@ -16,6 +16,7 @@ import java.util.HashMap;
 public class ShopItem extends AbstractBaseEntity{
 
     public static final String GET_BY_NAME = "ShopItem.getByName";
+    public static final String DELETE_BY_ID = "ShopItem.Delete";
 
     @NotBlank
     private String name;

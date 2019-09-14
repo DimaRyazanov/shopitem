@@ -23,6 +23,12 @@ public class ValidationUtil {
         }
     }
 
+    public static <T> void checkNotFound(boolean object, String msg) {
+        if (!object) {
+            throw new NotFoundException("Not found entity with " + msg);
+        }
+    }
+
     public static Throwable getRootCause(Throwable t) {
         Throwable result = t;
         Throwable cause;

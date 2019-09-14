@@ -45,4 +45,9 @@ public class ShopItemService {
         Assert.notNull(value, "Value option must be not null");
         return repository.getByOption(key, value);
     }
+
+    public void delete(String id) {
+        Assert.notNull(id, "id must be not null");
+        ValidationUtil.checkNotFound(repository.delete(id), "id=" + id);
+    }
 }
