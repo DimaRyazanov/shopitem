@@ -17,10 +17,6 @@ services:
        build:
             context: ./
             dockerfile: Dockerfile
-       working_dir: /
-       volumes:
-           - ./:/
-           - ~/.m2:/root/.m2
        expose:
            - "8080"
        command: mvn clean spring-boot:run
