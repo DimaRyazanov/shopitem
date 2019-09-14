@@ -14,7 +14,9 @@ services:
 
     app:
        restart: always
-       build: ./src
+       build:
+            context: ./src
+            dockerfile: Dockerfile
        working_dir: /src
        volumes:
            - ./src:/src
