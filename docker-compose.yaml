@@ -15,11 +15,11 @@ services:
     app:
        restart: always
        build:
-            context: ./src
+            context: ./
             dockerfile: Dockerfile
-       working_dir: /src
+       working_dir: /
        volumes:
-           - ./src:/src
+           - ./:/
            - ~/.m2:/root/.m2
        expose:
            - "8080"
