@@ -1,22 +1,23 @@
-version: "3"
+version: '3'
 services:
     mongodb:
-        image: mongo:3.4.23
-        container_name: "mongodb"
+        container_name: mongodb
+        image: mongo:3.6
         environment:
           - MONGO_DATA_DIR=/data/db
           - MONGO_LOG_DIR=/dev/null
-          volumes:
+        volumes:
             - ./data/db:/data/db
-          ports:
+        ports:
             - 27017:27017
-          command: mongod --smallfiles --logpath=/dev/null
+        command: mongod --smallfiles
+
     app:
        restart: always
-       build: ./app
-       working_dir: /
+       build: ./src
+       working_dir: /src
        volumes:
-           - ./app:/app
+           - ./src:/src
            - ~/.m2:/root/.m2
        expose:
            - "8080"
