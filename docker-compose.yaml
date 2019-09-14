@@ -12,15 +12,15 @@ services:
             - 27017:27017
         command: mongod --smallfiles
 
-  app:
-    restart: always
-    build: ./app
-    working_dir: /app
-    volumes:
-      - ./app:/app
-      - ~/.m2:/root/.m2
-    expose:
-      - "8080"
-    command: mvn clean spring-boot:run
-    depends_on:
-      - mongodb
+    app:
+        restart: always
+        build: ./app
+        working_dir: /app
+        volumes:
+            - ./app:/app
+            - ~/.m2:/root/.m2
+        expose:
+            - "8080"
+        command: mvn clean spring-boot:run
+        depends_on:
+            - mongodb
